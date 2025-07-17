@@ -45,7 +45,7 @@ export const updateNote = async (req, res) => {
       { new: true }
     );
 
-    if (!updateNote) return req.status(404).json({ message: "Note not found" });
+    if (!updateNote) return res.status(404).json({ message: "Note not found" });
     res.status(200).json(updatedNote);
   } catch (error) {
     console.error("error in updateNote controller", error);
